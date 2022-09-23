@@ -2,15 +2,15 @@ package week7
 import kotlinx.coroutines.*
 
 
-fun threadName(): String = Thread.currentThread().name
+    fun threadName(): String = Thread.currentThread().name
 
 fun main() {
     runBlocking {
-        launch {
+        launch(Dispatchers.Default) {
             test1WithCoroutines()
         }
 
-        launch {
+        launch() {
             test2WithCoroutines()
         }
     }
